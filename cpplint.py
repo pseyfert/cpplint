@@ -1980,7 +1980,7 @@ def GetHeaderGuardCPPVariable(filename):
     if suffix == '\\':
       suffix += '\\'
     file_path_from_root = re.sub('^' + _root + suffix, '', file_path_from_root)
-  return re.sub(r'[^a-zA-Z0-9]', '_', file_path_from_root).upper() + '_'
+  return re.sub(r'[^a-zA-Z0-9]', '_', file_path_from_root).upper()
 
 
 def CheckForHeaderGuard(filename, clean_lines, error):
@@ -2039,7 +2039,7 @@ def CheckForHeaderGuard(filename, clean_lines, error):
           cppvar)
     return
 
-  # The guard should be PATH_FILE_H_, but we also allow PATH_FILE_H__
+  # The guard should be PATH_FILE_H, but we also allow PATH_FILE_H_
   # for backward compatibility.
   if ifndef != cppvar:
     error_level = 0
